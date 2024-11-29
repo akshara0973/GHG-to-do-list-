@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="progress.css">
+</head>
+<body>
+    <div class="card">
+        <div class="rating">
+            <h2><span class="counter" data-target="30">30</span><sup>%</sup><br>HTML</h2>
+            <div class="block"></div>
+        </div>
+    </div>
+    <script>
+        const rating=document.getElementsByClassName('rating')[0];
+        const block=document.getElementsByClassName('block');
+        for(var i=1;i<100;i++)
+        {
+            rating.innerHTML += "<div class='block'></div>";
+            block[i].style.transform = "rotate("+ 3.6 * i +"deg)";
+            block[i].style.animationDelay = `${i/40}s`;
+        }
+        const counter = document.querySelector('.counter');
+       
+
+        const target = +counter.getAttribute('data-target');
+        const NumberCounter = () =>{
+            const value = +counter.innerText;
+            if(value < target)
+            {
+                counter.innerText=Math.ceil(value + 1);
+                setTimeout(()=>{
+                    NumberCounter()
+                },75)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="main.css.css" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form" id="2">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username"  name="U"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password"  name="P"/>
+            </div>
+            <input type="submit" value="Login" class="btn solid"  onclick="S()"/>
+            
+          </form>
+          <script>
+            function S()
+          {
+              var a=document.getElementById("2");
+              if(a.U.value.length<5||a.U.value.length>20)
+             {
+                alert("Full name: Must be of atleast 5 characters or maximum 20 characters:)")
+             }
+             if((a.P.value.match(/[^A-z 0-9]{7,15}/))||a.P.value.length<7)
+             {
+              alert("Password: Invalid Password:)")
+             }
+        }
+    
+          </script>
+        <form action="#" class="sign-up-form" id="1">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username"  name="U"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="text" placeholder="Email" name="E"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name="P" />
+            </div>
+          
+            <input type="submit" class="btn" value="Sign up" onclick="f()"/>
+            
+            
+          </form>
+        
+        <script>
+            function f()
+          {
+              var a=document.getElementById("1");
+              if(a.U.value==null||a.P.value==null)
+              {
+                alert("Field is empty:)")
+              }
+              if(a.U.value.length<5||a.U.value.length>20)
+             {
+                alert("Full name: Must be of atleast 5 characters or maximum 20 characters:)")
+             }
+             if(!a.E.value.match(/^([A-z 0-9]{5,15})@([A-z]{5,10}).com$/))
+             {
+              alert("Email:enter a valid email ID:)")
+             }
+             if(a.P.value.length<7)
+             {
+              alert("Password: Invalid Password:)")
+             }
+        }
+    
+          </script>
+
+          
+        </div>
+      </div>
+   
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Join us to work productively, fruitfully and efficiently.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+         <a href="paralax.html"><img src="signup.svg" class="image" alt="" /></a> 
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              How was your experience? Is it worth it? Stay tuned for more new features:)
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="signin.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

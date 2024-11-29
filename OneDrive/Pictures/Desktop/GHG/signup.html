@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="main.css.css" />
+    <title>Signup Form</title>
+  </head>
+  <body>
+      <form action="#" class="sign-up-form" id="1">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username"  name="U"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" name="E"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name="P" />
+            </div>
+          
+            <input type="submit" class="btn" value="Sign up" onclick="f()"/>
+            
+            
+          </form>
+        
+        <script>
+            function f()
+          {
+              var a=document.getElementById("1");
+              if(a.U.value==null||a.P.value==null)
+              {
+                alert("Field is empty:)")
+              }
+              if(a.U.value.length<5||a.U.value.length>20)
+             {
+                alert("Full name: Must be of atleast 5 characters or maximum 20 characters:)")
+             }
+             if(!a.E.value.match(/^([A-z 0-9]{5,15})@([A-z]{5,10}).com$/))
+             {
+              alert("Email:enter a valid email ID:)")
+             }
+             if(a.P.value.length<7)
+             {
+              alert("Password: Invalid Password:)")
+             }
+        }
+    
+          </script>
+
+          
+        </div>
+      </div>
